@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Andleeb Fatima — Graphic &amp; Brand Designer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F5F1E6;
+    --paper-warm:#EFE8D6;
+    --ink:#181611;
+    --ink-soft:#4A4539;
+    --blue:#1D4FE0;
+    --orange:#E3521B;
+    --mustard:#D6A32E;
+    --line: rgba(24,22,17,0.14);
+    --max: 1180px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Inter',sans-serif;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  ::selection{ background:var(--blue); color:var(--paper); }
+
+  a{color:inherit;}
+
+  .wrap{ max-width:var(--max); margin:0 auto; padding:0 32px; }
+
+  .eyebrow{
+    font-family:'Space Mono',monospace;
+    font-size:12px;
+    letter-spacing:0.18em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+  }
+
+  /* ---------- NAV ---------- */
+  header.nav{
+    position:sticky; top:0; z-index:50;
+    background:rgba(245,241,230,0.88);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{
+    max-width:var(--max); margin:0 auto; padding:18px 32px;
+    display:flex; align-items:center; justify-content:space-between;
+  }
+  .nav-mark{
+    font-family:'Fraunces',serif; font-weight:600; font-size:20px;
+    letter-spacing:0.01em;
+  }
+  .nav-mark span{ color:var(--orange); }
+  nav.links{ display:flex; gap:28px; }
+  nav.links a{
+    text-decoration:none; font-size:14px; font-weight:600;
+    color:var(--ink);
+    position:relative; padding-bottom:2px;
+  }
+  nav.links a::after{
+    content:""; position:absolute; left:0; right:0; bottom:-4px; height:2px;
+    background:var(--orange); transform:scaleX(0); transform-origin:left;
+    transition:transform .25s ease;
+  }
+  nav.links a:hover::after{ transform:scaleX(1); }
+  .nav-cta{
+    font-family:'Space Mono',monospace; font-size:12px; letter-spacing:.06em;
+    text-transform:uppercase; text-decoration:none;
+    border:1.5px solid var(--ink); padding:9px 16px; border-radius:2px;
+    transition:background .2s ease, color .2s ease;
+    white-space:nowrap;
+  }
+  .nav-cta:hover{ background:var(--ink); color:var(--paper); }
+  .burger{ display:none; }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    padding:96px 0 64px;
+    overflow:hidden;
+  }
+  .hero .wrap{ position:relative; z-index:2; }
+  .hero-eyebrow{ margin-bottom:22px; display:flex; align-items:center; gap:10px;}
+  .hero-eyebrow .dot{ width:7px; height:7px; border-radius:50%; background:var(--orange); display:inline-block; }
+  h1.hero-title{
+    font-family:'Fraunces',serif;
+    font-weight:600;
+    font-size:clamp(48px, 9vw, 108px);
+    line-height:0.94;
+    letter-spacing:-0.01em;
+    margin:0 0 28px;
+  }
+  h1.hero-title em{
+    font-style:italic; font-weight:500; color:var(--blue);
+  }
+  .hero-sub{
+    max-width:560px;
+    font-size:clamp(16px,2vw,19px);
+    line-height:1.6;
+    color:var(--ink-soft);
+    margin:0 0 36px;
+  }
+  .hero-actions{ display:flex; gap:14px; flex-wrap:wrap; align-items:center; }
+  .btn-primary{
+    font-family:'Space Mono',monospace; font-size:13px; letter-spacing:.05em;
+    text-transform:uppercase; text-decoration:none;
+    background:var(--ink); color:var(--paper);
+    padding:15px 26px; border-radius:2px; display:inline-flex; align-items:center; gap:10px;
+    transition:transform .2s ease, background .2s ease;
+  }
+  .btn-primary:hover{ background:var(--orange); transform:translateY(-2px); }
+  .btn-ghost{
+    font-family:'Space Mono',monospace; font-size:13px; letter-spacing:.05em;
+    text-transform:uppercase; text-decoration:none; color:var(--ink);
+    padding:15px 8px; border-bottom:1.5px solid var(--ink);
+  }
+
+  /* torn paper strip signature */
+  .torn{
+    position:relative; height:46px; width:100%;
+    background:var(--paper);
+  }
+  .torn svg{ display:block; width:100%; height:100%; }
+
+  .hero-band{
+    margin-top:70px;
+    background:var(--ink);
+    color:var(--paper);
+    position:relative;
+  }
+  .hero-band .wrap{
+    display:grid; grid-template-columns:repeat(4,1fr);
+    padding:26px 32px;
+  }
+  .hb-item{ padding:0 18px; border-left:1px solid rgba(245,241,230,0.18); }
+  .hb-item:first-child{ border-left:none; padding-left:0; }
+  .hb-num{ font-family:'Fraunces',serif; font-size:26px; font-weight:600; }
+  .hb-label{ font-family:'Space Mono',monospace; font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:rgba(245,241,230,0.6); margin-top:4px; }
+
+  /* ---------- SECTION HEADS ---------- */
+  .section{ padding:88px 0; }
+  .section-head{ margin-bottom:52px; max-width:640px; }
+  .section-head .eyebrow{ margin-bottom:14px; }
+  .section-head h2{
+    font-family:'Fraunces',serif; font-weight:600;
+    font-size:clamp(32px,4vw,46px);
+    line-height:1.08; margin:0 0 16px;
+  }
+  .section-head p{ color:var(--ink-soft); font-size:16px; line-height:1.65; margin:0; }
+
+  /* ---------- ABOUT ---------- */
+  .about{ background:var(--paper-warm); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+  .about-grid{
+    display:grid; grid-template-columns: 0.9fr 1.1fr; gap:64px; align-items:start;
+  }
+  .about-grid p{ font-size:17px; line-height:1.75; color:var(--ink-soft); margin:0 0 18px; }
+  .about-grid p strong{ color:var(--ink); font-weight:600; }
+  .tags{ display:flex; flex-wrap:wrap; gap:10px; margin-top:28px; }
+  .tag{
+    font-family:'Space Mono',monospace; font-size:12px; letter-spacing:.03em;
+    border:1px solid var(--line); padding:8px 14px; border-radius:20px; background:var(--paper);
+  }
+  .about-side{ position:sticky; top:96px; }
+  .about-card{
+    border:1px solid var(--line); background:var(--paper); padding:28px; border-radius:4px;
+  }
+  .about-card .row{ display:flex; justify-content:space-between; padding:12px 0; border-bottom:1px solid var(--line); font-size:14px; }
+  .about-card .row:last-child{ border-bottom:none; }
+  .about-card .row span:first-child{ color:var(--ink-soft); }
+  .about-card .row span:last-child{ font-weight:600; text-align:right; }
+
+  /* ---------- WORK ---------- */
+  .work{ background:var(--paper); }
+  .case{
+    display:grid; grid-template-columns: 0.85fr 1.15fr; gap:56px;
+    align-items:center;
+    padding:56px 0;
+    border-top:1px solid var(--line);
+  }
+  .case:last-child{ border-bottom:1px solid var(--line); }
+  .case.rev{ grid-template-columns: 1.15fr 0.85fr; }
+  .case.rev .case-media{ order:2; }
+  .case.rev .case-copy{ order:1; }
+  .case-media{
+    position:relative;
+    display:flex; align-items:center; justify-content:center;
+    background:var(--paper-warm);
+    border-radius:6px;
+    padding:24px;
+    min-height:420px;
+  }
+  .case-media img{
+    max-width:100%; max-height:460px; width:auto; height:auto;
+    border-radius:2px;
+    box-shadow:0 24px 48px -20px rgba(24,22,17,0.35);
+  }
+  .case-tape{
+    position:absolute; top:-10px; left:38px;
+    background:var(--mustard); color:var(--ink);
+    font-family:'Space Mono',monospace; font-size:11px; letter-spacing:.05em;
+    text-transform:uppercase; padding:6px 12px; transform:rotate(-3deg);
+    box-shadow:0 4px 10px rgba(0,0,0,0.15);
+  }
+  .case-index{
+    font-family:'Fraunces',serif; font-size:15px; color:var(--ink-soft);
+    margin-bottom:14px; display:block;
+  }
+  .case-copy h3{
+    font-family:'Fraunces',serif; font-weight:600; font-size:clamp(26px,3vw,36px);
+    margin:0 0 14px; line-height:1.1;
+  }
+  .case-copy p{ font-size:15.5px; line-height:1.7; color:var(--ink-soft); margin:0 0 20px; }
+  .case-meta{ display:flex; flex-wrap:wrap; gap:8px; margin-bottom:20px; }
+  .case-meta span{
+    font-family:'Space Mono',monospace; font-size:11px; letter-spacing:.04em;
+    text-transform:uppercase; border:1px solid var(--line); padding:6px 11px; border-radius:16px;
+    color:var(--ink-soft);
+  }
+  .case-result{
+    display:flex; align-items:baseline; gap:10px;
+    font-family:'Space Mono',monospace; font-size:13px; color:var(--blue);
+    border-left:2px solid var(--blue); padding-left:12px;
+  }
+
+  /* ---------- PROCESS ---------- */
+  .process{ background:var(--ink); color:var(--paper); }
+  .process .section-head h2{ color:var(--paper); }
+  .process .section-head p{ color:rgba(245,241,230,0.65); }
+  .process .eyebrow{ color:rgba(245,241,230,0.55); }
+  .steps{ display:grid; grid-template-columns:repeat(4,1fr); gap:0; border-top:1px solid rgba(245,241,230,0.18); }
+  .step{ padding:32px 24px 0; border-left:1px solid rgba(245,241,230,0.18); }
+  .step:first-child{ border-left:none; }
+  .step-n{ font-family:'Space Mono',monospace; font-size:12px; color:var(--mustard); letter-spacing:.06em; }
+  .step h4{ font-family:'Fraunces',serif; font-weight:500; font-size:20px; margin:10px 0 10px; }
+  .step p{ font-size:14px; line-height:1.6; color:rgba(245,241,230,0.65); margin:0; }
+
+  /* ---------- CONTACT ---------- */
+  .contact{ background:var(--paper); }
+  .contact-inner{
+    background:var(--paper-warm); border:1px solid var(--line); border-radius:8px;
+    padding:64px 56px; text-align:center; position:relative;
+  }
+  .contact h2{
+    font-family:'Fraunces',serif; font-weight:600; font-size:clamp(30px,5vw,52px);
+    margin:0 0 20px; line-height:1.05;
+  }
+  .contact h2 em{ font-style:italic; color:var(--orange); font-weight:500;}
+  .contact p{ color:var(--ink-soft); font-size:16px; max-width:460px; margin:0 auto 34px; line-height:1.6; }
+  .contact-actions{ display:flex; gap:14px; justify-content:center; flex-wrap:wrap; }
+
+  footer{ padding:36px 0 50px; }
+  .footer-inner{
+    display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;
+    font-family:'Space Mono',monospace; font-size:12px; color:var(--ink-soft);
+  }
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width: 880px){
+    nav.links{ display:none; }
+    .hero-band .wrap{ grid-template-columns:repeat(2,1fr); row-gap:24px; }
+    .hb-item:nth-child(3){ border-left:none; }
+    .about-grid{ grid-template-columns:1fr; gap:36px; }
+    .about-side{ position:static; }
+    .case, .case.rev{ grid-template-columns:1fr; gap:28px; }
+    .case.rev .case-media, .case.rev .case-copy{ order:initial; }
+    .case-media{ min-height:320px; padding:18px; }
+    .steps{ grid-template-columns:1fr 1fr; }
+    .step{ border-left:none; border-top:1px solid rgba(245,241,230,0.18); padding-top:24px; margin-top:8px;}
+    .step:nth-child(1),.step:nth-child(2){ margin-top:0; }
+    .step:nth-child(odd){ border-left:none; }
+    .contact-inner{ padding:44px 24px; }
+  }
+  @media (max-width: 560px){
+    .wrap{ padding:0 20px; }
+    .nav-inner{ padding:14px 20px; }
+    .nav-cta{ padding:8px 12px; font-size:11px; }
+    .hero{ padding:56px 0 40px; }
+    .section{ padding:60px 0; }
+    .steps{ grid-template-columns:1fr; }
+    .step{ border-left:none; border-top:1px solid rgba(245,241,230,0.18); padding-top:22px; }
+    .step:first-child{ border-top:none; padding-top:0; }
+    .hero-band .wrap{ grid-template-columns:1fr 1fr; }
+    .footer-inner{ flex-direction:column; align-items:flex-start; }
+  }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <div class="nav-mark">Andleeb<span>.</span>F</div>
+    <nav class="links">
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#process">Process</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="nav-cta" href="#contact">Let's Talk</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-eyebrow"><span class="dot"></span><span class="eyebrow">Graphic Designer · Canva Specialist</span></div>
+    <h1 class="hero-title">Andleeb Fatima<br>designs brands <em>people stop for.</em></h1>
+    <p class="hero-sub">I turn ideas into scroll-stopping visuals — social posts, brand covers, product ads and campaign concepts — built entirely in Canva, styled like they came off a studio wall.</p>
+    <div class="hero-actions">
+      <a class="btn-primary" href="#work">View the work →</a>
+      <a class="btn-ghost" href="#contact">Get in touch</a>
+    </div>
+  </div>
+
+  <div class="torn">
+    <svg viewBox="0 0 1200 40" preserveAspectRatio="none"><path d="M0,10 L40,22 L80,6 L120,26 L160,12 L200,28 L240,8 L280,24 L320,14 L360,30 L400,10 L440,24 L480,6 L520,26 L560,16 L600,30 L640,8 L680,22 L720,12 L760,28 L800,10 L840,24 L880,6 L920,26 L960,16 L1000,30 L1040,10 L1080,24 L1120,8 L1160,26 L1200,14 L1200,40 L0,40 Z" fill="#181611"></path></svg>
+  </div>
+
+  <div class="hero-band">
+    <div class="wrap">
+      <div class="hb-item">
+        <div class="hb-num">30+</div>
+        <div class="hb-label">Designs Delivered</div>
+      </div>
+      <div class="hb-item">
+        <div class="hb-num">4</div>
+        <div class="hb-label">Niches Covered</div>
+      </div>
+      <div class="hb-item">
+        <div class="hb-num">100%</div>
+        <div class="hb-label">Canva Built</div>
+      </div>
+      <div class="hb-item">
+        <div class="hb-num">24hr</div>
+        <div class="hb-label">Typical Turnaround</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="wrap section">
+    <div class="about-grid">
+      <div>
+        <span class="eyebrow">About</span>
+        <h2 style="font-family:'Fraunces',serif;font-weight:600;font-size:clamp(28px,3.4vw,38px);margin:16px 0 24px;line-height:1.12;">A designer who thinks in scroll-stops and shelf-appeal.</h2>
+        <p><strong>Andleeb Fatima</strong> is a self-taught graphic designer who builds brand-ready visuals entirely inside Canva — from fashion campaign covers and product mockups to travel content and food promotions.</p>
+        <p>Her work leans editorial: torn-paper reveals, bold type stacks, and device-mockup storytelling that make a single static post feel like a full campaign moment. Every project is built to stop the scroll first, sell second.</p>
+        <div class="tags">
+          <span class="tag">Social Media Design</span>
+          <span class="tag">Brand Covers</span>
+          <span class="tag">Product Ads</span>
+          <span class="tag">Poster Layout</span>
+          <span class="tag">Typography</span>
+          <span class="tag">Photo Compositing</span>
+        </div>
+      </div>
+      <div class="about-side">
+        <div class="about-card">
+          <div class="row"><span>Role</span><span>Graphic Designer</span></div>
+          <div class="row"><span>Primary Tool</span><span>Canva Pro</span></div>
+          <div class="row"><span>Focus</span><span>Fashion · Food · Travel · Social</span></div>
+          <div class="row"><span>Format</span><span>Static &amp; Carousel</span></div>
+          <div class="row"><span>Availability</span><span>Open to projects</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="work" id="work">
+  <div class="wrap section">
+    <div class="section-head">
+      <span class="eyebrow">Selected Work</span>
+      <h2>Four projects, four different jobs for the design to do.</h2>
+      <p>Each piece was built to solve a different problem — hook attention, sell a dish, sell a destination, or introduce a brand. Here's how.</p>
+    </div>
+
+    <div class="case">
+      <div class="case-media">
+        <span class="case-tape">Streetwear Concept</span>
+        <img src="images/phone-streetwear.jpeg" alt="Fashion streetwear design composited inside an iPhone mockup frame, designed by Andleeb Fatima">
+      </div>
+      <div class="case-copy">
+        <span class="case-index eyebrow">01 / Phone Mockup Series</span>
+        <h3>Breaking the frame</h3>
+        <p>A streetwear look composited to spill out of an iPhone screen — built to make a phone-mockup template feel alive instead of static. Precision cutouts and layered shadow work sell the illusion that the subject is stepping out of the device.</p>
+        <div class="case-meta">
+          <span>Photo Compositing</span>
+          <span>Device Mockup</span>
+          <span>Instagram Post</span>
+        </div>
+        <div class="case-result">Built for: fashion &amp; streetwear feed content</div>
+      </div>
+    </div>
+
+    <div class="case rev">
+      <div class="case-media">
+        <span class="case-tape" style="background:var(--blue); color:var(--paper);">Travel Layout</span>
+        <img src="images/italy-collage.jpeg" alt="Italy travel destination collage design in a circular quadrant layout, designed by Andleeb Fatima">
+      </div>
+      <div class="case-copy">
+        <span class="case-index eyebrow">02 / Italy Destination Collage</span>
+        <h3>Four cities, one shape</h3>
+        <p>A circular quadrant layout that lets four different Italian landmarks share one frame without competing. The rounded badge at the center anchors the eye and gives the whole composition a logo-like finish — built for travel agency and destination-marketing content.</p>
+        <div class="case-meta">
+          <span>Grid Layout</span>
+          <span>Photo Curation</span>
+          <span>Travel Marketing</span>
+        </div>
+        <div class="case-result">Built for: destination &amp; travel agency promotion</div>
+      </div>
+    </div>
+
+    <div class="case">
+      <div class="case-media">
+        <span class="case-tape">Brand Cover</span>
+        <img src="images/nori-cover.jpeg" alt="Nori fashion brand magazine-style cover design with torn paper effect, designed by Andleeb Fatima">
+      </div>
+      <div class="case-copy">
+        <span class="case-index eyebrow">03 / Nori — Brand Cover</span>
+        <h3>The magazine-cover trick</h3>
+        <p>A fictional fashion label brought to life with a magazine-cover treatment: oversized display type, a torn-paper reveal, and a punchy electric blue that carries the whole palette. It's a template for how a small brand can look editorial from day one.</p>
+        <div class="case-meta">
+          <span>Brand Identity</span>
+          <span>Typography</span>
+          <span>Cover Design</span>
+        </div>
+        <div class="case-result">Built for: fashion brand launch content</div>
+      </div>
+    </div>
+
+    <div class="case rev">
+      <div class="case-media">
+        <span class="case-tape" style="background:var(--orange); color:var(--paper);">Food Promo</span>
+        <img src="images/biryani-ad.jpeg" alt="Chicken Biryani food promotion advertisement design, designed by Andleeb Fatima">
+      </div>
+      <div class="case-copy">
+        <span class="case-index eyebrow">04 / Chicken Biryani — Ad</span>
+        <h3>Selling the plate, not just the post</h3>
+        <p>A food-delivery ad designed to do one job: make you hungry and get you tapping "order." Bold price callout, delivery-time badge and a warm illustrated border keep the hero shot — the food — front and center.</p>
+        <div class="case-meta">
+          <span>Food Advertising</span>
+          <span>Promo Layout</span>
+          <span>CTA Design</span>
+        </div>
+        <div class="case-result">Built for: restaurant &amp; food delivery promotion</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="process" id="process">
+  <div class="wrap section">
+    <div class="section-head">
+      <span class="eyebrow">How She Works</span>
+      <h2>From brief to scroll-stop, in four moves.</h2>
+      <p>The same process behind every project above, whether it's a fashion cover or a food ad.</p>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-n">Step 1</div>
+        <h4>Understand the job</h4>
+        <p>What is this design meant to make someone feel or do — stop, crave, click, remember?</p>
+      </div>
+      <div class="step">
+        <div class="step-n">Step 2</div>
+        <h4>Set the composition</h4>
+        <p>Pick the layout logic first — grid, frame, or collage — before touching color or type.</p>
+      </div>
+      <div class="step">
+        <div class="step-n">Step 3</div>
+        <h4>Build the visual language</h4>
+        <p>One accent color, one display font, one signature detail. No more, no less.</p>
+      </div>
+      <div class="step">
+        <div class="step-n">Step 4</div>
+        <h4>Polish for the platform</h4>
+        <p>Crop, contrast, and caption space adjusted for exactly where the post will live.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap section">
+    <div class="contact-inner">
+      <span class="eyebrow">Let's Work Together</span>
+      <h2 style="margin-top:18px;">Got a brand that needs a <em>scroll-stop?</em></h2>
+      <p>Open to freelance design work — social content, brand covers, ad creatives and campaign visuals, all built in Canva.</p>
+      <div class="contact-actions">
+        <a class="btn-primary" href="https://www.linkedin.com/in/andleeb-fatima-413422407?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener">Connect on LinkedIn →</a>
+        <a class="btn-ghost" href="mailto:hello@andleebfatima.design">hello@andleebfatima.design</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap footer-inner">
+    <span>© 2026 Andleeb Fatima — Graphic Designer</span>
+    <span>Designed &amp; built for LinkedIn Featured</span>
+  </div>
+</footer>
+
+</body>
+</html>
